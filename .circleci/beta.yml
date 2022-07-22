@@ -1,0 +1,16 @@
+version: 2.1
+
+jobs:
+  messageDeterminism:
+    docker:
+      - image: cimg/base:stable
+    resource_class: small
+    steps:
+      - checkout
+      - run:
+        command: echo "beta time"
+
+workflows:
+  deploychecks:
+    jobs:
+      - messageDeterminism
