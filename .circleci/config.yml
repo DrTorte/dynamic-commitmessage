@@ -1,0 +1,27 @@
+version: 2.1
+
+setup: true
+
+orbs:
+  continuation: circleci/continuation@0.3.1
+
+jobs:
+  deploychecks:
+    docker:
+      - image: cimg/base:stable
+    resource_class: small
+    steps:
+      - checkout
+      #determine day of week, then hour of day, then based on that, load a different configruation file.
+      - run:
+          name: extract the commit message
+          command: git log -1 --pretty=%B > changes.txt
+          name: get Date and time, then determine whether whether to hold or not.
+          command: |
+            cat changes.txt
+      - continuation/continue:
+          configuration_path: .circleci/nextconfig.yml
+workflows:
+  deploychecks:
+    jobs:
+      - deploychecks
