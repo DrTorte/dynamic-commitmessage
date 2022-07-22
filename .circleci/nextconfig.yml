@@ -8,7 +8,7 @@ jobs:
     steps:
       - checkout
       - run:
-        command: echo "Yeah, this is just the default. No change was made."
+          command: echo "Yeah, this is just the default. No change was made."
 
 workflows:
   deploychecks:
