@@ -1,0 +1,16 @@
+version: 2.1
+
+jobs:
+  messageDeterminism:
+    docker:
+      - image: cimg/base:stable
+    resource_class: small
+    steps:
+      - checkout
+      - run:
+        command: echo "Yeah, this is just the default. No change was made."
+
+workflows:
+  deploychecks:
+    jobs:
+      - messageDeterminism
