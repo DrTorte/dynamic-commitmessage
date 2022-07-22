@@ -16,6 +16,7 @@ jobs:
       - run:
           name: extract the commit message
           command: git log -1 --pretty=%B > changes.txt
+      - run:
           name: get Date and time, then determine whether whether to hold or not.
           command: |
             cat changes.txt
