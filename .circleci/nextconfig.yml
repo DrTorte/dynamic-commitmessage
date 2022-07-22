@@ -11,6 +11,6 @@ jobs:
           command: echo "Yeah, this is just the default. No change was made."
 
 workflows:
-  deploychecks:
+  default:
     jobs:
       - messageDeterminism
