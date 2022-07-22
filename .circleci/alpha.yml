@@ -11,6 +11,6 @@ jobs:
           command: echo "alpha detected, woo!"
 
 workflows:
-  deploychecks:
+  alpha:
     jobs:
       - messageDeterminism
