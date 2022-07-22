@@ -24,6 +24,7 @@ jobs:
             then echo alpha detected;
             elif grep -q beta changes.txt;
             then echo beta detected;
+            else echo nothing found that matches
             fi
             
       - continuation/continue:
