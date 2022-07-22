@@ -11,6 +11,6 @@ jobs:
           command: echo "beta time"
 
 workflows:
-  deploychecks:
+  beta:
     jobs:
       - messageDeterminism
