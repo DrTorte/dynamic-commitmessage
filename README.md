@@ -1,5 +1,5 @@
 # dynamic-commitmessage
-An example of how to use commit messages to load a configuration dynamically
+An example of how to use commit messages to load a configuration dynamically.
 
 ## How it works
 
