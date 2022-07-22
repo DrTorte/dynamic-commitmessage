@@ -8,7 +8,7 @@ jobs:
     steps:
       - checkout
       - run:
-        command: echo "alpha detected, woo!"
+          command: echo "alpha detected, woo!"
 
 workflows:
   deploychecks:
