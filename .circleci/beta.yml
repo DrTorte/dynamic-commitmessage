@@ -8,7 +8,7 @@ jobs:
     steps:
       - checkout
       - run:
-        command: echo "beta time"
+          command: echo "beta time"
 
 workflows:
   deploychecks:
