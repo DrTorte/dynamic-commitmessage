@@ -17,9 +17,15 @@ jobs:
           name: extract the commit message
           command: git log -1 --pretty=%B > changes.txt
       - run:
-          name: get Date and time, then determine whether whether to hold or not.
+          name: Compares the commit message to a few different options.
           command: |
             cat changes.txt
+            if grep -q alpha changes.txt;
+            then echo alpha detected;
+            elif grep -q beta changes.txt;
+            then echo beta detected;
+            fi
+            
       - continuation/continue:
           configuration_path: .circleci/nextconfig.yml
 workflows:
