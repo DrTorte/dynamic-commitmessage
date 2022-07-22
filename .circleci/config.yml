@@ -19,12 +19,15 @@ jobs:
       - run:
           name: Compares the commit message to a few different options.
           command: |
-            cat changes.txt
             if grep -q alpha changes.txt;
-            then echo alpha detected;
+            then 
+            echo alpha detected
+            cp .circleci/alpha.yml .circleci/nextconfig.yml;
             elif grep -q beta changes.txt;
-            then echo beta detected;
-            else echo nothing found that matches
+            then 
+            echo beta detected
+            cp .circleci/beta.yml .circleci/nextconfig.yml;
+            else echo neither alpha nor beta detected.
             fi
             
       - continuation/continue:
